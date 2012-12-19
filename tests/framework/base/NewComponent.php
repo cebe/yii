@@ -40,7 +40,9 @@ class NewComponent extends CComponent
 		return "Hello $p1";
 	}
 
-	public function handler1() {}
+	public function handler1() {
+		$this->detachEventHandler('OnMyEvent', array($this, 'handler1'));
+	}
 	public function handler2() {}
 	public function handler3() {}
 }

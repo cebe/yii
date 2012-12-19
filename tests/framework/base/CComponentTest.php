@@ -197,20 +197,9 @@ class CComponentTest extends CTestCase
 	public function testAttachDetachEventHandler()
 	{
 		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler1'));
-		$this->component->onMyEvent();
 		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
 		$this->component->onMyEvent();
 		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler3'));
-		$this->component->onMyEvent();
-
-		$this->component->detachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-		$this->component->detachEventHandler('OnMyEvent',array($this->component,'handler1'));
-		$this->component->onMyEvent();
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
 		$this->component->onMyEvent();
 	}
 
